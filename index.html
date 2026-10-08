@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23f6f2ea%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2711%27 fill=%27none%27 stroke=%27%2316140f%27 stroke-width=%272.5%27/%3E%3Cpath d=%27M16 16V7%27 stroke=%27%23d2361f%27 stroke-width=%273%27 stroke-linecap=%27round%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%272.5%27 fill=%27%2316140f%27/%3E%3C/svg%3E">
 <title>StyleLoop — AI writing engine that learns your taste</title>
 <meta name="description" content="StyleLoop is a self-improving AI writing engine built on Claude. It learns your voice from every edit you make. Private beta, launching soon.">
 <meta property="og:title" content="StyleLoop — Dial in your taste">
@@ -529,7 +530,7 @@ en: {
   lg0: "untouched character", lg1: "edited by the writer",
   d1: "Writer B · learned adapter", d1s: "vs. empty adapter, 8 unseen scenes",
   d2: "Writer A · B's adapter", d2s: "vs. A's own baseline, same 8 scenes",
-  fine: "Share of characters the writer changed in each draft (lower is better). p = 0.008 on both comparisons. B's adapter made Writer A edit 3.6× more, so every adapter is personal. October 2026 experiment with simulated writers who had hidden preferences; the learner saw only their edits. Validation with real writers is underway in the private beta. Code and full report: <a href=\"https://github.com/moneycode11101-svg/prose-adapter\">prose-adapter on GitHub</a>.",
+  fine: "Share of characters the writer changed in each draft (lower is better). p = 0.008 on both comparisons. B's adapter made Writer A edit 3.6× more, so every adapter is personal. October 2026 experiment with simulated writers who had hidden preferences; the learner saw only their edits. Validation with real writers is the next step.",
   c_label: "06 — Built on Claude",
   c_h2: "Claude at the core. <em>You at the wheel.</em>",
   c1_h: "Writing", c1: "Claude drafts every scene with your current adapter and the story's state: facts, beliefs, open threads.",
@@ -537,12 +538,12 @@ en: {
   c3_h: "Evolving", c3: "Claude proposes small rule edits from your corrections. The gate decides what stays. Every call is logged with its cost.",
   m_label: "07 — Roadmap",
   m_h2: "From one writer's voice <em>to every brand's.</em>",
-  m1_w: "Now", m1_h: "Private beta", m1: "Fiction and web-novel writers, the most demanding voices to match.",
+  m1_w: "Now", m1_h: "Private beta waitlist", m1: "Fiction and web-novel writers, the most demanding voices to match.",
   m2_w: "Next", m2_h: "Scripts & brand copy", m2: "Teams with a house style: video scripts, marketing, newsletters.",
   m3_w: "Later", m3_h: "Style layer API", m3: "Plug a learned voice into any Claude-powered app.",
   b_label: "Private beta",
   b_h2: "Be first to write with something that <em>learns you.</em>",
-  b_sub: "We are onboarding a small group of writers before public launch.",
+  b_sub: "We are opening StyleLoop to a small group of writers first.",
   b_what: "What do you write?",
   b_note: "Opens your mail app with a note to hello@trystyleloop.com",
   edits: n => n + (n === 1 ? " edit learned" : " edits learned"),
@@ -612,7 +613,7 @@ ko: {
   lg0: "손대지 않은 글자", lg1: "작가가 고친 글자",
   d1: "작가 B · 학습한 어댑터", d1s: "빈 어댑터와 비교, 처음 보는 장면 8개",
   d2: "작가 A · B의 어댑터", d2s: "A의 기본 상태와 비교, 같은 장면 8개",
-  fine: "각 초고에서 작가가 바꾼 글자 비율입니다(낮을수록 좋음). 두 비교 모두 p = 0.008. B의 어댑터를 작가 A에게 쓰면 오히려 3.6배 더 고쳐야 했습니다. 어댑터는 사람마다 다르게 배운다는 뜻입니다. 2026년 10월, 숨은 취향을 가진 가상 작가로 한 실험이며 학습 쪽은 교정 결과만 봤습니다. 실제 작가 검증은 비공개 베타에서 진행 중입니다. 코드와 전체 보고서: <a href=\"https://github.com/moneycode11101-svg/prose-adapter\">GitHub의 prose-adapter</a>.",
+  fine: "각 초고에서 작가가 바꾼 글자 비율입니다(낮을수록 좋음). 두 비교 모두 p = 0.008. B의 어댑터를 작가 A에게 쓰면 오히려 3.6배 더 고쳐야 했습니다. 어댑터는 사람마다 다르게 배운다는 뜻입니다. 2026년 10월, 숨은 취향을 가진 가상 작가로 한 실험이며 학습 쪽은 교정 결과만 봤습니다. 실제 작가 검증은 다음 단계입니다.",
   c_label: "06 — Claude 기반",
   c_h2: "엔진은 Claude, <em>핸들은 당신.</em>",
   c1_h: "집필", c1: "Claude가 현재 어댑터와 작품 상태(설정, 인물이 믿는 것, 회수 안 된 복선)를 함께 보고 장면을 씁니다.",
@@ -620,12 +621,12 @@ ko: {
   c3_h: "진화", c3: "Claude가 교정에서 작은 규칙 수정안을 내고, 관문이 남길 것을 정합니다. 모든 호출은 비용과 함께 기록됩니다.",
   m_label: "07 — 로드맵",
   m_h2: "한 작가의 문체에서 <em>모든 브랜드의 목소리로.</em>",
-  m1_w: "지금", m1_h: "비공개 베타", m1: "가장 맞추기 어려운 문체, 소설·웹소설 작가부터.",
+  m1_w: "지금", m1_h: "비공개 베타 대기 명단", m1: "가장 맞추기 어려운 문체, 소설·웹소설 작가부터.",
   m2_w: "다음", m2_h: "대본·브랜드 카피", m2: "하우스 스타일이 있는 팀: 영상 대본, 마케팅, 뉴스레터.",
   m3_w: "그다음", m3_h: "스타일 레이어 API", m3: "학습된 문체를 Claude 기반 어떤 앱에든 연결.",
   b_label: "비공개 베타",
   b_h2: "당신을 배우는 엔진과 <em>가장 먼저 써 보세요.</em>",
-  b_sub: "정식 출시 전, 소수의 작가부터 먼저 모시고 있습니다.",
+  b_sub: "정식 출시 전, 소수의 작가에게 먼저 엽니다.",
   b_what: "어떤 글을 쓰시나요?",
   b_note: "메일 앱이 열리고 hello@trystyleloop.com으로 신청 메일이 작성됩니다",
   edits: n => "학습한 교정 " + n + "건",
