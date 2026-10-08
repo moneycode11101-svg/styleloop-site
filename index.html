@@ -178,6 +178,39 @@ footer a{text-decoration:none}footer a:hover{color:var(--red)}
   .readout .big{font-size:72px}
 }
 
+
+/* harness vs fine-tuning */
+.hx{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start;margin-top:8px}
+.vs{width:100%;border-collapse:collapse;margin-top:36px;font-size:15px}
+.vs th{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 12px 12px 0}
+.vs th.us{color:var(--red)}
+.vs td{padding:14px 12px 14px 0;border-top:1px solid var(--line);vertical-align:top}
+.vs td:first-child{color:var(--muted);font:12px var(--mono);width:26%}
+.vs td.them{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(138,132,118,.5)}
+.vs td.us{font-weight:600}
+.lineage{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px;font:12px var(--mono);color:var(--ink-2)}
+.lineage span{border:1px solid var(--line);background:var(--card);padding:6px 10px;border-radius:999px}
+.lineage span.hl{border-color:var(--red);color:var(--red)}
+.lineage i{color:var(--muted);font-style:normal}
+
+.stack{background:var(--ink);color:var(--paper);border-radius:10px;padding:28px;position:relative;overflow:hidden}
+.stack-head{display:flex;justify-content:space-between;font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#8a8476;margin-bottom:18px}
+.layers{display:flex;flex-direction:column-reverse;gap:8px;height:258px;overflow:hidden;justify-content:flex-start}
+.layer{border:1px solid #3a372f;border-radius:6px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;font:13px var(--mono);
+  animation:drop .7s cubic-bezier(.2,1.3,.4,1) both}
+.layer.base{background:#24221c;border-style:dashed;color:#bdb6a6;animation:none}
+.layer.base b{color:var(--paper);font-weight:500}
+.layer.ad{background:linear-gradient(90deg,rgba(210,54,31,.22),rgba(210,54,31,.06));border-color:rgba(210,54,31,.6)}
+.layer.ad .ok{color:#7fd08f;font-size:11px}
+.layer.ad.old{opacity:.45}
+@keyframes drop{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:none}}
+.meters{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.meter{border:1px solid #3a372f;border-radius:6px;padding:12px}
+.meter .k{font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#8a8476}
+.meter .v{font-family:var(--serif);font-size:34px;line-height:1.1;margin-top:4px}
+.meter .v.red{color:#ff8a73}
+@media (max-width:900px){.hx{grid-template-columns:1fr}}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
 .rv.in{opacity:1;transform:none}
@@ -292,6 +325,34 @@ html[lang=ko] body{word-break:keep-all}
       <div><b data-i18n="p1_k"></b><p data-i18n="p1"></p></div>
       <div><b data-i18n="p2_k"></b><p data-i18n="p2"></p></div>
       <div><b data-i18n="p3_k"></b><p data-i18n="p3"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="rv" id="harness">
+  <div class="sec-label" data-i18n="h_label"></div>
+  <h2 data-i18n="h_h2"></h2>
+  <div class="hx">
+    <div>
+      <p class="sub" data-i18n="h_sub"></p>
+      <table class="vs">
+        <tr><th></th><th data-i18n="vs_them"></th><th class="us">StyleLoop</th></tr>
+        <tr><td data-i18n="vs1"></td><td class="them" data-i18n="vs1a"></td><td class="us" data-i18n="vs1b"></td></tr>
+        <tr><td data-i18n="vs2"></td><td class="them" data-i18n="vs2a"></td><td class="us" data-i18n="vs2b"></td></tr>
+        <tr><td data-i18n="vs3"></td><td class="them" data-i18n="vs3a"></td><td class="us" data-i18n="vs3b"></td></tr>
+        <tr><td data-i18n="vs4"></td><td class="them" data-i18n="vs4a"></td><td class="us" data-i18n="vs4b"></td></tr>
+        <tr><td data-i18n="vs5"></td><td class="them" data-i18n="vs5a"></td><td class="us" data-i18n="vs5b"></td></tr>
+      </table>
+      <div class="lineage"><span data-i18n="ln1"></span><i>→</i><span data-i18n="ln2"></span><i>→</i><span class="hl">StyleLoop</span></div>
+    </div>
+    <div class="stack" id="stack">
+      <div class="stack-head"><span data-i18n="st_h1"></span><span data-i18n="st_h2"></span></div>
+      <div class="layers" id="layers"><div class="layer base"><span><b>Claude</b> · <span data-i18n="st_base"></span></span><span>🔒</span></div></div>
+      <div class="meters">
+        <div class="meter"><div class="k" data-i18n="mt1"></div><div class="v">0</div></div>
+        <div class="meter"><div class="k" data-i18n="mt2"></div><div class="v">0</div></div>
+        <div class="meter"><div class="k" data-i18n="mt3"></div><div class="v red" id="laps">0</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -412,29 +473,43 @@ const I18N = {
 en: {
   nav_cta: "Join the waitlist",
   live: "Private beta · Launching soon",
-  eyebrow: "AI-native writing engine · Built on Claude",
+  eyebrow: "AI-native writing engine · Zero fine-tuning · Built on Claude",
   h1: "Dial in<br>your <em>taste.</em>",
   lead: "StyleLoop is a self-improving AI writing engine. It learns your voice from every edit you make and compounds it into a personal style layer on top of Claude. No fine-tuning. No prompt engineering. Every draft lands closer to you than the last.",
   cta: "Request early access",
   cta2: "See the research",
-  note: "Powered by Claude · Long-term style memory · Self-improving harness",
+  note: "Zero fine-tuning · Recursive self-improvement · Powered by Claude",
   sheet_head: "Chapter 12 · draft",
   margin: "You always cut the named emotion. Show it instead.",
-  marquee: ["AI-native writing engine", "Built on Claude", "Learns from every edit", "Self-improving harness", "Long-term style memory", "−94% rewriting in lab tests", "Launching soon"],
+  marquee: ["AI-native writing engine", "Built on Claude", "Zero fine-tuning", "Learns from every edit", "Recursive self-improvement", "Self-improving harness", "Long-term style memory", "−94% rewriting in lab tests", "Launching soon"],
   p_label: "01 — The problem",
   p_h2: "AI writes fast. <em>It doesn't write like you.</em>",
   p_sub: "Every writer using AI spends the session rewriting its output back into their own voice. Then those edits are thrown away, and tomorrow starts from zero.",
   p1_k: "Generic", p1: "Every model has a house voice. Yours gets averaged out.",
   p2_k: "Forgetful", p2: "Your corrections don't carry over. Same fixes, every single draft.",
+  h_label: "02 — Zero fine-tuning",
+  h_h2: "We don't train the model. <em>We evolve the harness.</em>",
+  h_sub: "Fine-tuning bakes a style into weights: slow, expensive, opaque, and thrown away with every new model. StyleLoop keeps Claude frozen and recursively improves everything around it: the rules, the memory, and the gate that decides what stays. It is recursive self-improvement at the harness level, measured on your own edits.",
+  vs_them: "Fine-tuning",
+  vs1: "Data needed", vs1a: "Thousands of examples", vs1b: "A handful of edits",
+  vs2: "Cost to adapt", vs2a: "GPU training runs", vs2b: "Zero GPUs, minutes per round",
+  vs3: "What changes", vs3a: "Opaque weights", vs3b: "Readable rules you can edit",
+  vs4: "New model release", vs4a: "Retrain from scratch", vs4b: "Your style carries over",
+  vs5: "Proof it helped", vs5a: "Hope", vs5b: "Gated on your own edits",
+  ln1: "Recursive self-improvement (RRSI)", ln2: "Harness-level optimization",
+  st_h1: "Live harness", st_h2: "model frozen",
+  st_base: "frozen weights",
+  mt1: "Fine-tuning runs", mt2: "GPU hours", mt3: "Adopted versions",
+  layer: n => "style adapter v" + n, layer_ok: "✓ passed gate",
   p3_k: "Unmeasured", p3: "Prompt tweaks feel better, but nobody checks whether they actually are.",
-  l_label: "02 — The flywheel",
+  l_label: "03 — The flywheel",
   l_h2: "Your edits become <em>the moat.</em>",
   l_sub: "The model stays fixed. What evolves is a readable style adapter wrapped around it: your long-term style memory, owned by you.",
   s1_h: "Seed it", s1: "A few instructions or a style guide. Claude writes the first draft.",
   s2_h: "Edit as usual", s2: "Every change you make is captured as a labeled example of your taste.",
   s3_h: "Rules emerge", s3: "Repeated edits become plain-language rules, each backed by the edits that support it.",
   s4_h: "Only proven changes ship", s4: "A new adapter must beat the current one on drafts you already corrected, or it is discarded. Then the flywheel spins again.",
-  g_label: "03 — The gate",
+  g_label: "04 — The gate",
   g_h2: "Scored by <em>you,</em> not by another model.",
   g_sub: "Asking an AI to grade \"good writing\" just swaps your taste for its taste. StyleLoop holds back drafts you already corrected, has the candidate adapter re-edit them, and ships it only if it lands measurably closer to your real edits.",
   f1: "// adopted only if gain beats the current version",
@@ -444,7 +519,7 @@ en: {
   gate_h1: "One learning round", gate_h2: "gain vs. current",
   v_rej: "rejected", v_loss: "more losses", v_ok: "adopted",
   gate_foot: "Illustration. Left of the line: worse than the current adapter.",
-  r_label: "04 — Research results",
+  r_label: "05 — Research results",
   r_h2: "−94% rewriting. <em>For the right writer.</em>",
   t0: "Empty adapter", t1: "Learned adapter",
   cap0: "of every draft rewritten by Writer B before learning.",
@@ -453,12 +528,12 @@ en: {
   d1: "Writer B · learned adapter", d1s: "vs. empty adapter, 8 unseen scenes",
   d2: "Writer A · B's adapter", d2s: "vs. A's own baseline, same 8 scenes",
   fine: "Share of characters the writer changed in each draft (lower is better). p = 0.008 on both comparisons. B's adapter made Writer A edit 3.6× more, so every adapter is personal. October 2026 experiment with simulated writers who had hidden preferences; the learner saw only their edits. Validation with real writers is underway in the private beta. Code and full report: <a href=\"https://github.com/moneycode11101-svg/prose-adapter\">prose-adapter on GitHub</a>.",
-  c_label: "05 — Built on Claude",
+  c_label: "06 — Built on Claude",
   c_h2: "Claude at the core. <em>You at the wheel.</em>",
   c1_h: "Writing", c1: "Claude drafts every scene with your current adapter and the story's state: facts, beliefs, open threads.",
   c2_h: "Knowing you", c2: "Before you edit, Claude predicts which sentences you will change. The hit rate proves whether it really knows your taste.",
   c3_h: "Evolving", c3: "Claude proposes small rule edits from your corrections. The gate decides what stays. Every call is logged with its cost.",
-  m_label: "06 — Roadmap",
+  m_label: "07 — Roadmap",
   m_h2: "From one writer's voice <em>to every brand's.</em>",
   m1_w: "Now", m1_h: "Private beta", m1: "Fiction and web-novel writers, the most demanding voices to match.",
   m2_w: "Next", m2_h: "Scripts & brand copy", m2: "Teams with a house style: video scripts, marketing, newsletters.",
@@ -480,29 +555,43 @@ en: {
 ko: {
   nav_cta: "대기 명단 등록",
   live: "비공개 베타 · 출시 예정",
-  eyebrow: "AI 네이티브 글쓰기 엔진 · Claude 기반",
+  eyebrow: "AI 네이티브 글쓰기 엔진 · 파인튜닝 제로 · Claude 기반",
   h1: "당신의 취향에<br><em>주파수를 맞추다.</em>",
   lead: "StyleLoop는 스스로 진화하는 AI 글쓰기 엔진입니다. 당신이 고친 모든 문장에서 문체를 배우고, Claude 위에 당신만의 스타일 레이어를 쌓아 갑니다. 파인튜닝도, 프롬프트 엔지니어링도 필요 없습니다. 초고는 쓸수록 당신에게 가까워집니다.",
   cta: "얼리 액세스 신청",
   cta2: "연구 결과 보기",
-  note: "Claude 기반 · 장기 문체 기억 · 자기 개선 하네스",
+  note: "파인튜닝 제로 · 재귀적 자기개선 · Claude 기반",
   sheet_head: "12화 · 초고",
   margin: "감정 이름은 늘 지우시네요. 행동으로 보여 줄게요.",
-  marquee: ["AI 네이티브 글쓰기 엔진", "Claude 기반", "모든 교정에서 학습", "자기 개선 하네스", "장기 문체 기억", "실험에서 고칠 거리 −94%", "출시 예정"],
+  marquee: ["AI 네이티브 글쓰기 엔진", "Claude 기반", "파인튜닝 제로", "모든 교정에서 학습", "재귀적 자기개선", "자기 개선 하네스", "장기 문체 기억", "실험에서 고칠 거리 −94%", "출시 예정"],
   p_label: "01 — 문제",
   p_h2: "AI는 빨리 씁니다. <em>당신처럼 쓰지 못할 뿐.</em>",
   p_sub: "AI로 글을 쓰는 사람은 결국 그 결과물을 자기 문체로 다시 고치는 데 시간을 씁니다. 그리고 그 교정은 버려지고, 내일은 다시 처음부터입니다.",
   p1_k: "획일", p1: "모델마다 고유한 말투가 있고, 당신의 문체는 평균으로 뭉개집니다.",
   p2_k: "망각", p2: "어제 고친 것이 오늘 남지 않습니다. 매 초고마다 같은 교정을 반복합니다.",
+  h_label: "02 — 파인튜닝 제로",
+  h_h2: "모델은 학습시키지 않습니다. <em>하네스를 진화시킵니다.</em>",
+  h_sub: "파인튜닝은 문체를 가중치에 굽습니다. 느리고, 비싸고, 들여다볼 수 없고, 새 모델이 나오면 버려집니다. StyleLoop는 Claude를 그대로 두고 그 바깥(규칙, 기억, 무엇을 남길지 정하는 관문)을 재귀적으로 개선합니다. 하네스 수준의 재귀적 자기개선(RSI)이며, 그 성과를 당신의 실제 교정으로 잽니다.",
+  vs_them: "파인튜닝",
+  vs1: "필요한 데이터", vs1a: "예시 수천 개", vs1b: "교정 몇 건",
+  vs2: "적응 비용", vs2a: "GPU 학습", vs2b: "GPU 0, 회차당 몇 분",
+  vs3: "바뀌는 것", vs3a: "들여다볼 수 없는 가중치", vs3b: "읽고 고칠 수 있는 규칙",
+  vs4: "새 모델 출시", vs4a: "처음부터 재학습", vs4b: "문체가 그대로 따라감",
+  vs5: "효과 증명", vs5a: "기대", vs5b: "당신의 교정으로 검증",
+  ln1: "재귀적 자기개선(RRSI)", ln2: "하네스 수준 최적화",
+  st_h1: "실시간 하네스", st_h2: "모델 고정",
+  st_base: "가중치 고정",
+  mt1: "파인튜닝 횟수", mt2: "GPU 사용 시간", mt3: "채택된 버전",
+  layer: n => "문체 어댑터 v" + n, layer_ok: "✓ 관문 통과",
   p3_k: "무검증", p3: "프롬프트를 바꾸면 나아진 것 같지만, 정말 나아졌는지는 아무도 재지 않습니다.",
-  l_label: "02 — 플라이휠",
+  l_label: "03 — 플라이휠",
   l_h2: "당신의 교정이 <em>해자가 됩니다.</em>",
   l_sub: "모델은 그대로 둡니다. 진화하는 것은 그 바깥을 감싼, 사람이 읽을 수 있는 문체 어댑터입니다. 당신이 소유하는 장기 문체 기억입니다.",
   s1_h: "씨앗 심기", s1: "지시 몇 줄이나 스타일 가이드만 주면 Claude가 첫 초고를 씁니다.",
   s2_h: "평소처럼 고치기", s2: "당신이 고친 모든 곳이 취향을 담은 학습 예시로 쌓입니다.",
   s3_h: "규칙이 떠오름", s3: "반복되는 교정이 읽을 수 있는 규칙이 되고, 규칙마다 근거가 된 교정이 붙습니다.",
   s4_h: "증명된 변화만 반영", s4: "새 어댑터는 이미 고친 초고에서 현재 버전을 이겨야만 채택됩니다. 그리고 플라이휠이 다시 돕니다.",
-  g_label: "03 — 관문",
+  g_label: "04 — 관문",
   g_h2: "점수는 <em>당신이</em> 매깁니다. 다른 모델이 아니라.",
   g_sub: "AI에게 \"좋은 글\"을 채점시키면 당신의 취향이 AI의 취향으로 바뀔 뿐입니다. StyleLoop는 이미 고친 초고를 따로 떼어 두고, 후보 어댑터가 그 초고를 다시 고치게 한 뒤, 실제 교정에 측정 가능하게 더 가까워졌을 때만 반영합니다.",
   f1: "// 현재 버전보다 gain이 높을 때만 채택",
@@ -512,7 +601,7 @@ ko: {
   gate_h1: "학습 한 회차", gate_h2: "현재 대비 gain",
   v_rej: "기각", v_loss: "패배가 더 많음", v_ok: "채택",
   gate_foot: "예시 그림입니다. 선 왼쪽은 현재 어댑터보다 나쁜 후보입니다.",
-  r_label: "04 — 연구 결과",
+  r_label: "05 — 연구 결과",
   r_h2: "고칠 거리 −94%. <em>그 작가에게만.</em>",
   t0: "빈 어댑터", t1: "학습한 어댑터",
   cap0: "학습 전, 작가 B가 초고에서 고친 글자 비율.",
@@ -521,12 +610,12 @@ ko: {
   d1: "작가 B · 학습한 어댑터", d1s: "빈 어댑터와 비교, 처음 보는 장면 8개",
   d2: "작가 A · B의 어댑터", d2s: "A의 기본 상태와 비교, 같은 장면 8개",
   fine: "각 초고에서 작가가 바꾼 글자 비율입니다(낮을수록 좋음). 두 비교 모두 p = 0.008. B의 어댑터를 작가 A에게 쓰면 오히려 3.6배 더 고쳐야 했습니다. 어댑터는 사람마다 다르게 배운다는 뜻입니다. 2026년 10월, 숨은 취향을 가진 가상 작가로 한 실험이며 학습 쪽은 교정 결과만 봤습니다. 실제 작가 검증은 비공개 베타에서 진행 중입니다. 코드와 전체 보고서: <a href=\"https://github.com/moneycode11101-svg/prose-adapter\">GitHub의 prose-adapter</a>.",
-  c_label: "05 — Claude 기반",
+  c_label: "06 — Claude 기반",
   c_h2: "엔진은 Claude, <em>핸들은 당신.</em>",
   c1_h: "집필", c1: "Claude가 현재 어댑터와 작품 상태(설정, 인물이 믿는 것, 회수 안 된 복선)를 함께 보고 장면을 씁니다.",
   c2_h: "당신을 안다", c2: "고치기 전에 Claude가 당신이 고칠 문장을 먼저 예측합니다. 적중률이 취향을 정말 아는지 증명합니다.",
   c3_h: "진화", c3: "Claude가 교정에서 작은 규칙 수정안을 내고, 관문이 남길 것을 정합니다. 모든 호출은 비용과 함께 기록됩니다.",
-  m_label: "06 — 로드맵",
+  m_label: "07 — 로드맵",
   m_h2: "한 작가의 문체에서 <em>모든 브랜드의 목소리로.</em>",
   m1_w: "지금", m1_h: "비공개 베타", m1: "가장 맞추기 어려운 문체, 소설·웹소설 작가부터.",
   m2_w: "다음", m2_h: "대본·브랜드 카피", m2: "하우스 스타일이 있는 팀: 영상 대본, 마케팅, 뉴스레터.",
@@ -703,6 +792,30 @@ document.querySelectorAll('.rv').forEach(el => io.observe(el));
       t.querySelectorAll('.tile').forEach((x, j) => setTimeout(() => x.classList.add('flip'), row * 500 + j * 180)));
     document.querySelectorAll('.duel .counter').forEach((c, row) => setTimeout(() => countTo(c, 0, 8, 0, ''), row * 500));
   });
+})();
+
+// harness stack: adapters stack on top of a frozen model, fine-tuning stays at zero
+(function(){
+  const layers = document.getElementById('layers'), laps = document.getElementById('laps');
+  let n = 0;
+  function addLayer(){
+    n++;
+    if (n > 4) {
+      layers.querySelectorAll('.layer.ad').forEach(x => x.remove());
+      n = 1;
+    }
+    layers.querySelectorAll('.layer.ad').forEach(x => x.classList.add('old'));
+    const el = document.createElement('div');
+    el.className = 'layer ad';
+    el.dataset.n = n;
+    el.innerHTML = '<span>' + T('layer')(n) + '</span><span class="ok">' + T('layer_ok') + '</span>';
+    layers.appendChild(el);
+    laps.textContent = n;
+  }
+  onLang.push(() => layers.querySelectorAll('.layer.ad').forEach(x => {
+    x.innerHTML = '<span>' + T('layer')(+x.dataset.n) + '</span><span class="ok">' + T('layer_ok') + '</span>';
+  }));
+  onSeen(document.getElementById('stack'), () => { addLayer(); setInterval(addLayer, 1800); });
 })();
 
 document.getElementById('f').addEventListener('submit', e => {
