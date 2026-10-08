@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StyleLoop — Dial in your taste</title>
+<meta name="description" content="StyleLoop is a writing engine that learns your style from the edits you make, and only keeps what measurably brings it closer to you.">
+<style>
+:root{--bg:#fbfaf7;--fg:#1b1a17;--muted:#6b675f;--line:#e4e0d6;--accent:#c2410c;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141311;--fg:#eeeae2;--muted:#a19c91;--line:#2c2a26;--accent:#fb923c;--card:#1c1b18}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:56px 20px 80px}
+.brand{font-weight:700;letter-spacing:-.01em}
+.brand span{color:var(--accent)}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.1;letter-spacing:-.03em;margin:48px 0 16px}
+.lead{font-size:20px;color:var(--muted);margin:0 0 32px}
+h2{font-size:22px;margin:56px 0 12px;letter-spacing:-.01em}
+ol,ul{padding-left:20px}li{margin:6px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:15px}
+td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
+th{color:var(--muted);font-weight:500}
+.note{font-size:14px;color:var(--muted)}
+form{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+input{flex:1 1 240px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}
+button{padding:12px 18px;border:0;border-radius:8px;background:var(--accent);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+a{color:var(--accent)}
+footer{margin-top:72px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<div class="brand">Style<span>Loop</span></div>
+
+<h1>Dial in your taste.</h1>
+<p class="lead">A writing engine that learns your style from the edits you make, and keeps a change only when it measurably brings drafts closer to how you would have written them.</p>
+
+<a href="#beta"><button type="button">Request beta access</button></a>
+
+<h2>How it works</h2>
+<ol>
+  <li><strong>Seed it.</strong> Give it a few instructions or a style guide. Claude writes a first draft.</li>
+  <li><strong>Edit as usual.</strong> Every edit you make becomes a labeled example of your taste.</li>
+  <li><strong>It proposes rules.</strong> StyleLoop turns repeated edits into a readable style adapter: plain rules, each backed by the edits that support it.</li>
+  <li><strong>Only proven changes ship.</strong> Each new adapter re-edits held-out drafts you already corrected. It is adopted only if its output gets closer to your actual edits than the current version does.</li>
+</ol>
+<p>The model stays fixed. What evolves is the harness around it: the adapter, its evidence, and the gate that decides what is kept. Your corrections are the score, not another model's opinion of "good writing".</p>
+
+<h2>Early results</h2>
+<div class="card">
+<table>
+<tr><th>Simulated writer</th><th>Adapter</th><th>Edits needed</th></tr>
+<tr><td>Writer B</td><td>Empty adapter</td><td>5.05%</td></tr>
+<tr><td>Writer B</td><td>Learned adapter</td><td>0.28% (−94%, 8 wins / 0 losses)</td></tr>
+<tr><td>Writer A</td><td>Writer B's adapter</td><td>6.37% vs 1.78% baseline</td></tr>
+</table>
+<p class="note">October 2026 experiment with simulated writers with hidden preferences, evaluated on 8 unseen scenes. The adapter learned only from edits, never from the hidden preferences. Applying B's adapter to A made things worse, showing that adapters are writer-specific. Real users still need to confirm this. Code and full report: <a href="https://github.com/moneycode11101-svg/prose-adapter">prose-adapter on GitHub</a>.</p>
+</div>
+
+<h2>Built on Claude</h2>
+<p>Drafting, edit prediction, and rule proposals run on Claude. Every call is logged with its cost, so learning stays measurable and cheap.</p>
+
+<h2 id="beta">Request beta access</h2>
+<p>We are starting with fiction and web-novel writers. Leave your email and what you write.</p>
+<form id="f">
+  <input type="email" id="email" required placeholder="you@example.com" aria-label="Email">
+  <input type="text" id="what" placeholder="What do you write? (optional)" aria-label="What do you write">
+  <button type="submit">Request access</button>
+</form>
+<p class="note">Opens your mail app with a request to hello@trystyleloop.com.</p>
+
+<footer>StyleLoop · <a href="mailto:hello@trystyleloop.com">hello@trystyleloop.com</a></footer>
+</main>
+<script>
+document.getElementById('f').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var email = document.getElementById('email').value;
+  var what = document.getElementById('what').value;
+  var body = 'Email: ' + email + '\nWhat I write: ' + what;
+  location.href = 'mailto:hello@trystyleloop.com?subject=' + encodeURIComponent('StyleLoop beta request') + '&body=' + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
