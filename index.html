@@ -287,27 +287,27 @@ html[lang=ko] body{word-break:keep-all}
   </a>
   <div class="nav-right">
     <div class="lang" id="lang"><button data-l="en">EN</button><button data-l="ko">한국어</button></div>
-    <a class="nav-cta" href="#beta" data-i18n="nav_cta"></a>
+    <a class="nav-cta" href="#beta" data-i18n="nav_cta">Join the waitlist</a>
   </div>
 </nav>
 
 <header class="hero">
   <div>
-    <div class="live"><i></i><span data-i18n="live"></span></div>
-    <div class="eyebrow" data-i18n="eyebrow"></div>
-    <h1 data-i18n="h1"></h1>
-    <p class="lead" data-i18n="lead"></p>
+    <div class="live"><i></i><span data-i18n="live">Private beta · Launching soon</span></div>
+    <div class="eyebrow" data-i18n="eyebrow">AI-native writing engine · Zero fine-tuning · Built on Claude</div>
+    <h1 data-i18n="h1">Dial in<br>your <em>taste.</em></h1>
+    <p class="lead" data-i18n="lead">StyleLoop is a self-improving AI writing engine. It learns your voice from every edit you make and compounds it into a personal style layer on top of Claude. No fine-tuning. No prompt engineering. Every draft lands closer to you than the last.</p>
     <div class="hero-ctas">
-      <a class="btn" href="#beta"><span data-i18n="cta"></span> <span>→</span></a>
-      <a class="btn ghost" href="#results" data-i18n="cta2"></a>
+      <a class="btn" href="#beta"><span data-i18n="cta">Request early access</span> <span>→</span></a>
+      <a class="btn ghost" href="#results" data-i18n="cta2">See the research</a>
     </div>
-    <div class="hero-note" data-i18n="note"></div>
+    <div class="hero-note" data-i18n="note">Zero fine-tuning · Recursive self-improvement · Powered by Claude</div>
   </div>
 
   <div class="sheet" aria-label="Example of an edited draft">
-    <div class="sheet-head"><span data-i18n="sheet_head"></span><span id="ver">adapter v3</span></div>
+    <div class="sheet-head"><span data-i18n="sheet_head">Chapter 12 · draft</span><span id="ver">adapter v3</span></div>
     <p class="prose" id="prose"></p>
-    <div class="margin-note" data-i18n="margin"></div>
+    <div class="margin-note" data-i18n="margin">You always cut the named emotion. Show it instead.</div>
     <div class="sheet-foot"><span id="edits"></span><span class="chip" id="chip">v4 adopted</span></div>
   </div>
 </header>
@@ -319,50 +319,50 @@ html[lang=ko] body{word-break:keep-all}
 <section class="rv" style="border-top:0">
   <div class="problem">
     <div>
-      <div class="sec-label" data-i18n="p_label"></div>
-      <h2 data-i18n="p_h2"></h2>
-      <p class="sub" data-i18n="p_sub"></p>
+      <div class="sec-label" data-i18n="p_label">01 — The problem</div>
+      <h2 data-i18n="p_h2">AI writes fast. <em>It doesn't write like you.</em></h2>
+      <p class="sub" data-i18n="p_sub">Every writer using AI spends the session rewriting its output back into their own voice. Then those edits are thrown away, and tomorrow starts from zero.</p>
     </div>
     <div class="pain">
-      <div><b data-i18n="p1_k"></b><p data-i18n="p1"></p></div>
-      <div><b data-i18n="p2_k"></b><p data-i18n="p2"></p></div>
-      <div><b data-i18n="p3_k"></b><p data-i18n="p3"></p></div>
+      <div><b data-i18n="p1_k">Generic</b><p data-i18n="p1">Every model has a house voice. Yours gets averaged out.</p></div>
+      <div><b data-i18n="p2_k">Forgetful</b><p data-i18n="p2">Your corrections don't carry over. Same fixes, every single draft.</p></div>
+      <div><b data-i18n="p3_k">Unmeasured</b><p data-i18n="p3">Prompt tweaks feel better, but nobody checks whether they actually are.</p></div>
     </div>
   </div>
 </section>
 
 <section class="rv" id="harness">
-  <div class="sec-label" data-i18n="h_label"></div>
-  <h2 data-i18n="h_h2"></h2>
+  <div class="sec-label" data-i18n="h_label">02 — Zero fine-tuning</div>
+  <h2 data-i18n="h_h2">We don't train the model. <em>We evolve the harness.</em></h2>
   <div class="hx">
     <div>
-      <p class="sub" data-i18n="h_sub"></p>
+      <p class="sub" data-i18n="h_sub">Fine-tuning bakes a style into weights: slow, expensive, opaque, and thrown away with every new model. StyleLoop keeps Claude frozen and recursively improves everything around it: the rules, the memory, and the gate that decides what stays. It is recursive self-improvement at the harness level, measured on your own edits.</p>
       <table class="vs">
-        <tr><th></th><th data-i18n="vs_them"></th><th class="us">StyleLoop</th></tr>
-        <tr><td data-i18n="vs1"></td><td class="them" data-i18n="vs1a"></td><td class="us" data-i18n="vs1b"></td></tr>
-        <tr><td data-i18n="vs2"></td><td class="them" data-i18n="vs2a"></td><td class="us" data-i18n="vs2b"></td></tr>
-        <tr><td data-i18n="vs3"></td><td class="them" data-i18n="vs3a"></td><td class="us" data-i18n="vs3b"></td></tr>
-        <tr><td data-i18n="vs4"></td><td class="them" data-i18n="vs4a"></td><td class="us" data-i18n="vs4b"></td></tr>
-        <tr><td data-i18n="vs5"></td><td class="them" data-i18n="vs5a"></td><td class="us" data-i18n="vs5b"></td></tr>
+        <tr><th></th><th data-i18n="vs_them">Fine-tuning</th><th class="us">StyleLoop</th></tr>
+        <tr><td data-i18n="vs1">Data needed</td><td class="them" data-i18n="vs1a">Thousands of examples</td><td class="us" data-i18n="vs1b">A handful of edits</td></tr>
+        <tr><td data-i18n="vs2">Cost to adapt</td><td class="them" data-i18n="vs2a">GPU training runs</td><td class="us" data-i18n="vs2b">Zero GPUs, minutes per round</td></tr>
+        <tr><td data-i18n="vs3">What changes</td><td class="them" data-i18n="vs3a">Opaque weights</td><td class="us" data-i18n="vs3b">Readable rules you can edit</td></tr>
+        <tr><td data-i18n="vs4">New model release</td><td class="them" data-i18n="vs4a">Retrain from scratch</td><td class="us" data-i18n="vs4b">Your style carries over</td></tr>
+        <tr><td data-i18n="vs5">Proof it helped</td><td class="them" data-i18n="vs5a">Hope</td><td class="us" data-i18n="vs5b">Gated on your own edits</td></tr>
       </table>
-      <div class="lineage"><span data-i18n="ln1"></span><i>→</i><span data-i18n="ln2"></span><i>→</i><span class="hl">StyleLoop</span></div>
+      <div class="lineage"><span data-i18n="ln1">Recursive self-improvement (RRSI)</span><i>→</i><span data-i18n="ln2">Harness-level optimization</span><i>→</i><span class="hl">StyleLoop</span></div>
     </div>
     <div class="stack" id="stack">
-      <div class="stack-head"><span data-i18n="st_h1"></span><span data-i18n="st_h2"></span></div>
-      <div class="layers" id="layers"><div class="layer base"><span><b>Claude</b> · <span data-i18n="st_base"></span></span><span>🔒</span></div></div>
+      <div class="stack-head"><span data-i18n="st_h1">Live harness</span><span data-i18n="st_h2">model frozen</span></div>
+      <div class="layers" id="layers"><div class="layer base"><span><b>Claude</b> · <span data-i18n="st_base">frozen weights</span></span><span>🔒</span></div></div>
       <div class="meters">
-        <div class="meter"><div class="k" data-i18n="mt1"></div><div class="v">0</div></div>
-        <div class="meter"><div class="k" data-i18n="mt2"></div><div class="v">0</div></div>
-        <div class="meter"><div class="k" data-i18n="mt3"></div><div class="v red" id="laps">0</div></div>
+        <div class="meter"><div class="k" data-i18n="mt1">Fine-tuning runs</div><div class="v">0</div></div>
+        <div class="meter"><div class="k" data-i18n="mt2">GPU hours</div><div class="v">0</div></div>
+        <div class="meter"><div class="k" data-i18n="mt3">Adopted versions</div><div class="v red" id="laps">0</div></div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="rv">
-  <div class="sec-label" data-i18n="l_label"></div>
-  <h2 data-i18n="l_h2"></h2>
-  <p class="sub" data-i18n="l_sub"></p>
+  <div class="sec-label" data-i18n="l_label">03 — The flywheel</div>
+  <h2 data-i18n="l_h2">Your edits become <em>the moat.</em></h2>
+  <p class="sub" data-i18n="l_sub">The model stays fixed. What evolves is a readable style adapter wrapped around it: your long-term style memory, owned by you.</p>
   <div class="loop-wrap">
     <div class="ring">
       <svg viewBox="0 0 400 400" aria-hidden="true">
@@ -376,10 +376,10 @@ html[lang=ko] body{word-break:keep-all}
       <div class="ring-center"><div class="k">adapter</div><div class="v" id="ringv">v0</div></div>
     </div>
     <div class="steps">
-      <div class="st"><div class="n">i.</div><div><h3 data-i18n="s1_h"></h3><p data-i18n="s1"></p></div></div>
-      <div class="st"><div class="n">ii.</div><div><h3 data-i18n="s2_h"></h3><p data-i18n="s2"></p></div></div>
-      <div class="st"><div class="n">iii.</div><div><h3 data-i18n="s3_h"></h3><p data-i18n="s3"></p></div></div>
-      <div class="st"><div class="n">iv.</div><div><h3 data-i18n="s4_h"></h3><p data-i18n="s4"></p></div></div>
+      <div class="st"><div class="n">i.</div><div><h3 data-i18n="s1_h">Seed it</h3><p data-i18n="s1">A few instructions or a style guide. Claude writes the first draft.</p></div></div>
+      <div class="st"><div class="n">ii.</div><div><h3 data-i18n="s2_h">Edit as usual</h3><p data-i18n="s2">Every change you make is captured as a labeled example of your taste.</p></div></div>
+      <div class="st"><div class="n">iii.</div><div><h3 data-i18n="s3_h">Rules emerge</h3><p data-i18n="s3">Repeated edits become plain-language rules, each backed by the edits that support it.</p></div></div>
+      <div class="st"><div class="n">iv.</div><div><h3 data-i18n="s4_h">Only proven changes ship</h3><p data-i18n="s4">A new adapter must beat the current one on drafts you already corrected, or it is discarded. Then the flywheel spins again.</p></div></div>
     </div>
   </div>
 </section>
@@ -387,85 +387,85 @@ html[lang=ko] body{word-break:keep-all}
 <section class="rv">
   <div class="principle">
     <div>
-      <div class="sec-label" data-i18n="g_label"></div>
-      <h2 data-i18n="g_h2"></h2>
-      <p class="sub" data-i18n="g_sub"></p>
+      <div class="sec-label" data-i18n="g_label">04 — The gate</div>
+      <h2 data-i18n="g_h2">Scored by <em>you,</em> not by another model.</h2>
+      <p class="sub" data-i18n="g_sub">Asking an AI to grade "good writing" just swaps your taste for its taste. StyleLoop holds back drafts you already corrected, has the candidate adapter re-edit them, and ships it only if it lands measurably closer to your real edits.</p>
     </div>
     <div>
     <div class="formula">
-      <span class="c" data-i18n="f1"></span>
+      <span class="c" data-i18n="f1">// adopted only if gain beats the current version</span>
       <span class="big">gain = sim(<span class="k">adapter's edit</span>, your edit) − sim(draft, your edit)</span>
-      <span class="c" data-i18n="f2"></span><br>
-      <span class="c" data-i18n="f3"></span><br>
-      <span class="c" data-i18n="f4"></span><span class="k">adopted</span>
+      <span class="c" data-i18n="f2">// rule backed by 1 edit → observation (not used)</span><br>
+      <span class="c" data-i18n="f3">// rule backed by 2+ edits → hypothesis</span><br>
+      <span class="c" data-i18n="f4">// passes the gate → </span><span class="k">adopted</span>
     </div>
     <div class="gate" id="gate">
-      <div class="gate-head"><span data-i18n="gate_h1"></span><span data-i18n="gate_h2"></span></div>
-      <div class="cand" data-g="-0.35" data-ok="0"><span>v2</span><div class="axis"><div class="gbar"></div></div><span class="verdict no" data-i18n="v_rej"></span></div>
-      <div class="cand" data-g="0.08" data-ok="0"><span>v3</span><div class="axis"><div class="gbar"></div></div><span class="verdict no" data-i18n="v_loss"></span></div>
-      <div class="cand" data-g="0.9" data-ok="1"><span>v4</span><div class="axis"><div class="gbar"></div></div><span class="verdict yes" data-i18n="v_ok"></span></div>
-      <div class="gate-foot" data-i18n="gate_foot"></div>
+      <div class="gate-head"><span data-i18n="gate_h1">One learning round</span><span data-i18n="gate_h2">gain vs. current</span></div>
+      <div class="cand" data-g="-0.35" data-ok="0"><span>v2</span><div class="axis"><div class="gbar"></div></div><span class="verdict no" data-i18n="v_rej">rejected</span></div>
+      <div class="cand" data-g="0.08" data-ok="0"><span>v3</span><div class="axis"><div class="gbar"></div></div><span class="verdict no" data-i18n="v_loss">more losses</span></div>
+      <div class="cand" data-g="0.9" data-ok="1"><span>v4</span><div class="axis"><div class="gbar"></div></div><span class="verdict yes" data-i18n="v_ok">adopted</span></div>
+      <div class="gate-foot" data-i18n="gate_foot">Illustration. Left of the line: worse than the current adapter.</div>
     </div>
     </div>
   </div>
 </section>
 
 <section class="rv" id="results">
-  <div class="sec-label" data-i18n="r_label"></div>
-  <h2 data-i18n="r_h2"></h2>
+  <div class="sec-label" data-i18n="r_label">05 — Research results</div>
+  <h2 data-i18n="r_h2">−94% rewriting. <em>For the right writer.</em></h2>
   <div class="field-wrap">
     <div class="field" id="field" aria-label="Characters changed by the writer"></div>
     <div class="readout">
-      <div class="toggle" id="toggle"><button data-k="0" class="on" data-i18n="t0"></button><button data-k="1" data-i18n="t1"></button></div>
+      <div class="toggle" id="toggle"><button data-k="0" class="on" data-i18n="t0">Empty adapter</button><button data-k="1" data-i18n="t1">Learned adapter</button></div>
       <div class="big" id="pct">5.05%</div>
       <div class="cap" id="cap"></div>
-      <div class="legend"><span data-i18n="lg0"></span><span class="r" data-i18n="lg1"></span></div>
+      <div class="legend"><span data-i18n="lg0">untouched character</span><span class="r" data-i18n="lg1">edited by the writer</span></div>
     </div>
   </div>
   <div class="duels" id="duels">
-    <div class="duel"><div class="lbl"><span data-i18n="d1"></span><small data-i18n="d1s"></small></div><div class="tiles" data-kind="w"></div><div class="score"><span class="counter">0</span>–0</div></div>
-    <div class="duel"><div class="lbl"><span data-i18n="d2"></span><small data-i18n="d2s"></small></div><div class="tiles" data-kind="l"></div><div class="score">0–<span class="counter">0</span></div></div>
+    <div class="duel"><div class="lbl"><span data-i18n="d1">Writer B · learned adapter</span><small data-i18n="d1s">vs. empty adapter, 8 unseen scenes</small></div><div class="tiles" data-kind="w"></div><div class="score"><span class="counter">0</span>–0</div></div>
+    <div class="duel"><div class="lbl"><span data-i18n="d2">Writer A · B's adapter</span><small data-i18n="d2s">vs. A's own baseline, same 8 scenes</small></div><div class="tiles" data-kind="l"></div><div class="score">0–<span class="counter">0</span></div></div>
   </div>
-  <p class="fine" data-i18n="fine"></p>
+  <p class="fine" data-i18n="fine">Share of characters the writer changed in each draft (lower is better). p = 0.008 on both comparisons. B's adapter made Writer A edit 3.6× more, so every adapter is personal. October 2026 experiment with simulated writers who had hidden preferences; the learner saw only their edits. Validation with real writers is the next step.</p>
 </section>
 
 <section class="rv">
-  <div class="sec-label" data-i18n="c_label"></div>
-  <h2 data-i18n="c_h2"></h2>
+  <div class="sec-label" data-i18n="c_label">06 — Built on Claude</div>
+  <h2 data-i18n="c_h2">Claude at the core. <em>You at the wheel.</em></h2>
   <div class="claude-grid">
-    <div class="cg"><div class="tag">Draft</div><h3 data-i18n="c1_h"></h3><p data-i18n="c1"></p></div>
-    <div class="cg"><div class="tag">Predict</div><h3 data-i18n="c2_h"></h3><p data-i18n="c2"></p></div>
-    <div class="cg"><div class="tag">Learn</div><h3 data-i18n="c3_h"></h3><p data-i18n="c3"></p></div>
+    <div class="cg"><div class="tag">Draft</div><h3 data-i18n="c1_h">Writing</h3><p data-i18n="c1">Claude drafts every scene with your current adapter and the story's state: facts, beliefs, open threads.</p></div>
+    <div class="cg"><div class="tag">Predict</div><h3 data-i18n="c2_h">Knowing you</h3><p data-i18n="c2">Before you edit, Claude predicts which sentences you will change. The hit rate proves whether it really knows your taste.</p></div>
+    <div class="cg"><div class="tag">Learn</div><h3 data-i18n="c3_h">Evolving</h3><p data-i18n="c3">Claude proposes small rule edits from your corrections. The gate decides what stays. Every call is logged with its cost.</p></div>
   </div>
 </section>
 
 <section class="rv">
-  <div class="sec-label" data-i18n="m_label"></div>
-  <h2 data-i18n="m_h2"></h2>
+  <div class="sec-label" data-i18n="m_label">07 — Roadmap</div>
+  <h2 data-i18n="m_h2">From one writer's voice <em>to every brand's.</em></h2>
   <div class="road">
-    <div class="rm now"><div class="when" data-i18n="m1_w"></div><h3 data-i18n="m1_h"></h3><p data-i18n="m1"></p></div>
-    <div class="rm"><div class="when" data-i18n="m2_w"></div><h3 data-i18n="m2_h"></h3><p data-i18n="m2"></p></div>
-    <div class="rm"><div class="when" data-i18n="m3_w"></div><h3 data-i18n="m3_h"></h3><p data-i18n="m3"></p></div>
+    <div class="rm now"><div class="when" data-i18n="m1_w">Now</div><h3 data-i18n="m1_h">Private beta waitlist</h3><p data-i18n="m1">Fiction and web-novel writers, the most demanding voices to match.</p></div>
+    <div class="rm"><div class="when" data-i18n="m2_w">Next</div><h3 data-i18n="m2_h">Scripts & brand copy</h3><p data-i18n="m2">Teams with a house style: video scripts, marketing, newsletters.</p></div>
+    <div class="rm"><div class="when" data-i18n="m3_w">Later</div><h3 data-i18n="m3_h">Style layer API</h3><p data-i18n="m3">Plug a learned voice into any Claude-powered app.</p></div>
   </div>
 </section>
 
 <div class="beta rv" id="beta">
   <div>
-    <div class="sec-label" style="color:#8a8476" data-i18n="b_label"></div>
-    <h2 data-i18n="b_h2"></h2>
-    <p class="sub" data-i18n="b_sub"></p>
+    <div class="sec-label" style="color:#8a8476" data-i18n="b_label">Private beta</div>
+    <h2 data-i18n="b_h2">Be first to write with something that <em>learns you.</em></h2>
+    <p class="sub" data-i18n="b_sub">We are opening StyleLoop to a small group of writers first.</p>
   </div>
   <form id="f">
     <input type="email" id="email" required placeholder="you@example.com" aria-label="Email">
-    <input type="text" id="what" data-i18n-ph="b_what" aria-label="What do you write">
-    <button class="btn" type="submit"><span data-i18n="cta"></span> <span>→</span></button>
-    <div class="form-note" data-i18n="b_note"></div>
+    <input type="text" id="what" data-i18n-ph="b_what" placeholder="What do you write?" aria-label="What do you write">
+    <button class="btn" type="submit"><span data-i18n="cta">Request early access</span> <span>→</span></button>
+    <div class="form-note" data-i18n="b_note">Opens your mail app with a note to hello@trystyleloop.com</div>
   </form>
 </div>
 
 <footer>
   <span>© 2026 StyleLoop</span>
-  <nav class="legal"><a href="privacy.html" data-i18n="ft_privacy"></a><a href="terms.html" data-i18n="ft_terms"></a><a href="mailto:hello@trystyleloop.com">hello@trystyleloop.com</a></nav>
+  <nav class="legal"><a href="privacy.html" data-i18n="ft_privacy">Privacy Policy</a><a href="terms.html" data-i18n="ft_terms">Terms of Service</a><a href="mailto:hello@trystyleloop.com">hello@trystyleloop.com</a></nav>
 </footer>
 </div>
 
@@ -473,79 +473,10 @@ html[lang=ko] body{word-break:keep-all}
 
 const I18N = {
 en: {
-  nav_cta: "Join the waitlist",
-  ft_privacy: "Privacy Policy", ft_terms: "Terms of Service",
-  live: "Private beta · Launching soon",
-  eyebrow: "AI-native writing engine · Zero fine-tuning · Built on Claude",
-  h1: "Dial in<br>your <em>taste.</em>",
-  lead: "StyleLoop is a self-improving AI writing engine. It learns your voice from every edit you make and compounds it into a personal style layer on top of Claude. No fine-tuning. No prompt engineering. Every draft lands closer to you than the last.",
-  cta: "Request early access",
-  cta2: "See the research",
-  note: "Zero fine-tuning · Recursive self-improvement · Powered by Claude",
-  sheet_head: "Chapter 12 · draft",
-  margin: "You always cut the named emotion. Show it instead.",
   marquee: ["AI-native writing engine", "Built on Claude", "Zero fine-tuning", "Learns from every edit", "Recursive self-improvement", "Self-improving harness", "Long-term style memory", "−94% rewriting in lab tests", "Launching soon"],
-  p_label: "01 — The problem",
-  p_h2: "AI writes fast. <em>It doesn't write like you.</em>",
-  p_sub: "Every writer using AI spends the session rewriting its output back into their own voice. Then those edits are thrown away, and tomorrow starts from zero.",
-  p1_k: "Generic", p1: "Every model has a house voice. Yours gets averaged out.",
-  p2_k: "Forgetful", p2: "Your corrections don't carry over. Same fixes, every single draft.",
-  h_label: "02 — Zero fine-tuning",
-  h_h2: "We don't train the model. <em>We evolve the harness.</em>",
-  h_sub: "Fine-tuning bakes a style into weights: slow, expensive, opaque, and thrown away with every new model. StyleLoop keeps Claude frozen and recursively improves everything around it: the rules, the memory, and the gate that decides what stays. It is recursive self-improvement at the harness level, measured on your own edits.",
-  vs_them: "Fine-tuning",
-  vs1: "Data needed", vs1a: "Thousands of examples", vs1b: "A handful of edits",
-  vs2: "Cost to adapt", vs2a: "GPU training runs", vs2b: "Zero GPUs, minutes per round",
-  vs3: "What changes", vs3a: "Opaque weights", vs3b: "Readable rules you can edit",
-  vs4: "New model release", vs4a: "Retrain from scratch", vs4b: "Your style carries over",
-  vs5: "Proof it helped", vs5a: "Hope", vs5b: "Gated on your own edits",
-  ln1: "Recursive self-improvement (RRSI)", ln2: "Harness-level optimization",
-  st_h1: "Live harness", st_h2: "model frozen",
-  st_base: "frozen weights",
-  mt1: "Fine-tuning runs", mt2: "GPU hours", mt3: "Adopted versions",
   layer: n => "style adapter v" + n, layer_ok: "✓ passed gate",
-  p3_k: "Unmeasured", p3: "Prompt tweaks feel better, but nobody checks whether they actually are.",
-  l_label: "03 — The flywheel",
-  l_h2: "Your edits become <em>the moat.</em>",
-  l_sub: "The model stays fixed. What evolves is a readable style adapter wrapped around it: your long-term style memory, owned by you.",
-  s1_h: "Seed it", s1: "A few instructions or a style guide. Claude writes the first draft.",
-  s2_h: "Edit as usual", s2: "Every change you make is captured as a labeled example of your taste.",
-  s3_h: "Rules emerge", s3: "Repeated edits become plain-language rules, each backed by the edits that support it.",
-  s4_h: "Only proven changes ship", s4: "A new adapter must beat the current one on drafts you already corrected, or it is discarded. Then the flywheel spins again.",
-  g_label: "04 — The gate",
-  g_h2: "Scored by <em>you,</em> not by another model.",
-  g_sub: "Asking an AI to grade \"good writing\" just swaps your taste for its taste. StyleLoop holds back drafts you already corrected, has the candidate adapter re-edit them, and ships it only if it lands measurably closer to your real edits.",
-  f1: "// adopted only if gain beats the current version",
-  f2: "// rule backed by 1 edit → observation (not used)",
-  f3: "// rule backed by 2+ edits → hypothesis",
-  f4: "// passes the gate → ",
-  gate_h1: "One learning round", gate_h2: "gain vs. current",
-  v_rej: "rejected", v_loss: "more losses", v_ok: "adopted",
-  gate_foot: "Illustration. Left of the line: worse than the current adapter.",
-  r_label: "05 — Research results",
-  r_h2: "−94% rewriting. <em>For the right writer.</em>",
-  t0: "Empty adapter", t1: "Learned adapter",
   cap0: "of every draft rewritten by Writer B before learning.",
   cap1: "after StyleLoop learned from B's edits, on scenes it had never seen.",
-  lg0: "untouched character", lg1: "edited by the writer",
-  d1: "Writer B · learned adapter", d1s: "vs. empty adapter, 8 unseen scenes",
-  d2: "Writer A · B's adapter", d2s: "vs. A's own baseline, same 8 scenes",
-  fine: "Share of characters the writer changed in each draft (lower is better). p = 0.008 on both comparisons. B's adapter made Writer A edit 3.6× more, so every adapter is personal. October 2026 experiment with simulated writers who had hidden preferences; the learner saw only their edits. Validation with real writers is the next step.",
-  c_label: "06 — Built on Claude",
-  c_h2: "Claude at the core. <em>You at the wheel.</em>",
-  c1_h: "Writing", c1: "Claude drafts every scene with your current adapter and the story's state: facts, beliefs, open threads.",
-  c2_h: "Knowing you", c2: "Before you edit, Claude predicts which sentences you will change. The hit rate proves whether it really knows your taste.",
-  c3_h: "Evolving", c3: "Claude proposes small rule edits from your corrections. The gate decides what stays. Every call is logged with its cost.",
-  m_label: "07 — Roadmap",
-  m_h2: "From one writer's voice <em>to every brand's.</em>",
-  m1_w: "Now", m1_h: "Private beta waitlist", m1: "Fiction and web-novel writers, the most demanding voices to match.",
-  m2_w: "Next", m2_h: "Scripts & brand copy", m2: "Teams with a house style: video scripts, marketing, newsletters.",
-  m3_w: "Later", m3_h: "Style layer API", m3: "Plug a learned voice into any Claude-powered app.",
-  b_label: "Private beta",
-  b_h2: "Be first to write with something that <em>learns you.</em>",
-  b_sub: "We are opening StyleLoop to a small group of writers first.",
-  b_what: "What do you write?",
-  b_note: "Opens your mail app with a note to hello@trystyleloop.com",
   edits: n => n + (n === 1 ? " edit learned" : " edits learned"),
   frames: [
     'She was very angry. She looked at him with furious eyes and said nothing for a long time.',
@@ -555,6 +486,7 @@ en: {
   ],
   mail_subject: "StyleLoop beta request", mail_email: "Email", mail_what: "What I write"
 },
+
 ko: {
   nav_cta: "대기 명단 등록",
   ft_privacy: "개인정보처리방침", ft_terms: "이용약관",
@@ -639,6 +571,9 @@ ko: {
   mail_subject: "StyleLoop 베타 신청", mail_email: "이메일", mail_what: "쓰는 글"
 }
 };
+// 영어 문구는 HTML 본문이 원본이다(JS 없이도 읽히게). 사전에는 한국어와 JS 전용 문구만 둔다.
+document.querySelectorAll('[data-i18n]').forEach(el => { I18N.en[el.dataset.i18n] ??= el.innerHTML; });
+document.querySelectorAll('[data-i18n-ph]').forEach(el => { I18N.en[el.dataset.i18nPh] ??= el.placeholder; });
 let LANG = 'en';
 try { const saved = localStorage.getItem('sl-lang'); if (saved === 'en' || saved === 'ko') LANG = saved; } catch (e) { /* 저장소가 막힌 브라우저: 기본 영어 */ }
 const T = k => I18N[LANG][k];
