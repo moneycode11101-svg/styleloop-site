@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;600&family=Noto+Sans+KR:wght@400;600&display=swap");
+:root{--paper:#f6f2ea;--ink:#16140f;--ink-2:#4a463d;--muted:#8a8476;--line:#ddd5c4;--red:#d2361f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 Inter,"Noto Sans KR",system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:40px 16px 96px}
+a{color:var(--ink-2)}
+.back{font-size:14px;text-decoration:none}
+.jump{margin-top:24px;font-size:14px;color:var(--muted)}
+article{padding-top:40px}
+article + article{margin-top:64px;border-top:1px solid var(--line)}
+h1{font:400 48px/1.05 "Instrument Serif","Noto Sans KR",serif;letter-spacing:-.02em;margin:0 0 8px}
+.date{color:var(--muted);font-size:14px;margin:0 0 28px}
+h2{font-size:17px;margin:32px 0 6px}
+p,li{color:var(--ink-2)}
+ul{padding-left:20px}

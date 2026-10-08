@@ -97,6 +97,7 @@ form .btn:hover{background:#ef4a30}
 
 footer{display:flex;justify-content:space-between;align-items:center;padding:32px 0 48px;font:13px var(--mono);color:var(--muted)}
 footer a{text-decoration:none}footer a:hover{color:var(--red)}
+footer .legal{display:flex;flex-wrap:wrap;gap:22px;padding:0}
 
 
 /* loop ring */
@@ -463,7 +464,7 @@ html[lang=ko] body{word-break:keep-all}
 
 <footer>
   <span>© 2026 StyleLoop</span>
-  <a href="mailto:hello@trystyleloop.com">hello@trystyleloop.com</a>
+  <nav class="legal"><a href="privacy.html" data-i18n="ft_privacy"></a><a href="terms.html" data-i18n="ft_terms"></a><a href="mailto:hello@trystyleloop.com">hello@trystyleloop.com</a></nav>
 </footer>
 </div>
 
@@ -472,6 +473,7 @@ html[lang=ko] body{word-break:keep-all}
 const I18N = {
 en: {
   nav_cta: "Join the waitlist",
+  ft_privacy: "Privacy Policy", ft_terms: "Terms of Service",
   live: "Private beta · Launching soon",
   eyebrow: "AI-native writing engine · Zero fine-tuning · Built on Claude",
   h1: "Dial in<br>your <em>taste.</em>",
@@ -554,6 +556,7 @@ en: {
 },
 ko: {
   nav_cta: "대기 명단 등록",
+  ft_privacy: "개인정보처리방침", ft_terms: "이용약관",
   live: "비공개 베타 · 출시 예정",
   eyebrow: "AI 네이티브 글쓰기 엔진 · 파인튜닝 제로 · Claude 기반",
   h1: "당신의 취향에<br><em>주파수를 맞추다.</em>",
